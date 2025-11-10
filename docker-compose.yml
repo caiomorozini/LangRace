@@ -1,0 +1,52 @@
+services:
+  langrace-java:
+    build: ./java
+    container_name: langrace-java
+    ports:
+      - "8085:8080"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    restart: unless-stopped
+
+  langrace-go:
+    build: ./go
+    container_name: langrace-go
+    ports:
+      - "8082:8082"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8082/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    restart: unless-stopped
+
+  langrace-rust:
+    build: ./rust
+    container_name: langrace-rust
+    ports:
+      - "8083:8080"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    restart: unless-stopped
+
+  langrace-dotnet:
+    build: ./dotnet
+    container_name: langrace-dotnet
+    ports:
+      - "8084:8084"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8084"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    restart: unless-stopped
+
+networks:
+  default:
+    name: langrace-network

@@ -1,0 +1,139 @@
+# ============================================================
+# LangRace - Git Ignore
+# Ignora arquivos temporários, binários e dependências
+# de todos os serviços (Go, Rust, Java, .NET) e containers
+# ============================================================
+
+# -------------------------
+# Sistema / Gerais
+# -------------------------
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.swp
+*.swo
+*.bak
+*.old
+*.orig
+.env
+.env.local
+.env.*
+!env.example
+
+# -------------------------
+# Docker
+# -------------------------
+**/Dockerfile~
+**/docker-compose.override.yml
+**/.dockerignore
+**/.env.docker
+*.pid
+*.seed
+*.tar
+**/tmp/
+
+# -------------------------
+# Python / Scripts auxiliares
+# -------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pytest_cache
+*.mypy_cache
+.venv/
+venv/
+
+# -------------------------
+# Node / Front-end (caso exista)
+# -------------------------
+node_modules/
+dist/
+build/
+*.lock
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# -------------------------
+# Go
+# -------------------------
+go.sum
+bin/
+*.exe
+*.out
+*.test
+**/*.prof
+
+# -------------------------
+# Rust
+# -------------------------
+target/
+Cargo.lock
+**/*.rlib
+**/*.dSYM
+**/*.pdb
+
+# -------------------------
+# Java / Maven / Gradle
+# -------------------------
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+*.zip
+*.tar.gz
+*.rar
+*.iml
+target/
+out/
+.gradle/
+build/
+.mvn/
+dependency-reduced-pom.xml
+
+# -------------------------
+# .NET / C#
+# -------------------------
+bin/
+obj/
+*.exe
+*.dll
+*.pdb
+*.cache
+*.user
+*.suo
+*.csproj.user
+*.dbmdl
+*.log
+project.lock.json
+.nuget/
+.vscode/
+.vs/
+artifacts/
+
+# -------------------------
+# IDEs / Editores
+# -------------------------
+.idea/
+.vscode/
+*.code-workspace
+*.sublime-project
+*.sublime-workspace
+
+# -------------------------
+# Arquivos de benchmark e relatórios
+# -------------------------
+benchmark_results/
+*.csv
+*.json
+*.md.bak
+
+# -------------------------
+# Arquivos de build Docker temporários
+# -------------------------
+**/app/
+**/release/
+**/build/
+**/run/
