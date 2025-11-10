@@ -16,7 +16,7 @@ func benchmarkHandler(c *fiber.Ctx) error {
 	start := time.Now()
 
 	var sum uint64
-	for i := uint64(1); i <= 10_000_000; i++ {
+	for i := uint64(1); i <= 100_000_000; i++ {
 		sum += i
 	}
 

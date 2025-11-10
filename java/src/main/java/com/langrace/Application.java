@@ -19,11 +19,11 @@ public class Application {
     public Map<String, Object> benchmark() {
         long startTime = System.nanoTime();
         long sum = 0;
-        for (long i = 0; i < 1_000_000L; i++) {
+        for (long i = 0; i < 100_000_000L; i++) {
             sum += i;
         }
         long endTime = System.nanoTime();
-        long durationMs = (endTime - startTime) / 1_000_000;
+        long durationMs = (endTime - startTime) / 100_000_000;
         return Map.of("language", "Java", "duration_ms", durationMs, "result", sum);
     }
 
